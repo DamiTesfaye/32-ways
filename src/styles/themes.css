@@ -1,0 +1,6 @@
+/* Example theme tokens that shadcn components can inherit */
+:root {
+  --radius: 0.75rem;
+}
+.light {}
+.dark {}

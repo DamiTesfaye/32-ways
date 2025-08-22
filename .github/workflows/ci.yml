@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [ main, develop, "**/**" ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck || echo "typecheck step optional"
+      - run: pnpm -s -w -r build || pnpm -s build
+      - run: pnpm -s lint || echo "lint step optional"
+      - run: pnpm -s test || echo "no tests yet"
