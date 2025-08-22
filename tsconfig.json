@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2023",
     "useDefineForClassFields": true,
     "lib": [
@@ -33,8 +32,8 @@
     "src"
   ],
   "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    //    {
+    //      "path": "./tsconfig.node.json"
+    //    }
   ]
 }
