@@ -3,16 +3,23 @@ import {createRoot} from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import './index.css'
 import {LoginPage} from '@/features/auth'
+import {RootLayout} from "@/components/Layout";
 import {DashboardPage} from '@/features/dashboard'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage/>,
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardPage/>,
+    element: <RootLayout/>,
+    children: [
+      {
+        index: true,
+        element: <LoginPage/>,
+      },
+      {
+        path: "dashboard",
+        element: <DashboardPage/>,
+      },
+    ],
   },
 ])
 
