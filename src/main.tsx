@@ -2,9 +2,9 @@ import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import './index.css'
-import {LoginPage} from '@/features/auth'
 import {RootLayout} from "@/components/Layout";
 import {DashboardPage} from '@/features/dashboard'
+import LoginPage from "@/features/auth/pages/LoginPage.tsx";
 
 const router = createBrowserRouter([
   {
